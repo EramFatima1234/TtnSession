@@ -9,4 +9,5 @@ q5 - select salespeople.snum,sname,city from salespeople, orders where orders.sn
 q6 - select s.snum, s.sname, s.city, o.onum, o.amt, o.odate, o.cnum from salespeople s, orders o where o.snum = s.snum;
 q7 - create index MyIndex on orders (onum,amt,odate,cnum);
 q8 - show index from orders;
-q9 - select o.onum,s.sname, c.cname from orders o, customers c, salespeople s where c.cnum = o.cnum;
+q9 - select onum, sname, cname from orders o, Salespeople s, Customers c where o.cnum = c.cnum and o.snum = s.snum;
+
