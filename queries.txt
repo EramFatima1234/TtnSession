@@ -1,0 +1,12 @@
+q3 - CREATE TABLE Salespeople (snum integer PRIMARY KEY, sname CHAR(10) NOT NULL, city CHAR(10), comm float(10,2));
+   - CREATE TABLE Customers (cnum integer PRIMARY KEY, cname char(10) NOT NULL, city CHAR(10), rating INTEGER);
+   - CREATE TABLE orders ( onum integer PRIMARY KEY, amt DECIMAL, odate DATE NOT NULL, cnum INTEGER NOT NULL, snum INTEGER NOT NULL, FOREIGN KEY (snum) REFERENCES      Salespeople(snum), FOREIGN KEY (cnum) REFERENCES Customers(cnum));
+   - Alter table orders add constraint unique(cnum,snum);
+q4 - insert into salespeople values (1,'SHOP1','Delhi','0.5'), (2,'SHOP2','Goa','0.75'), (3,'SHOP3','Noida','0.35');
+   - insert into customers values  (1,'Sahil','kashmir',1), (2,'Sadaf','delhi',2), (3,'Eram','delhi',4), (4,'Sakura','Japan',1);
+   - insert into orders values (1,1200,'2020-02-05',1,3), (2,1100,'2020-02-06',2,1), (3,950,'2020-02-03',3,2), (4,100,'2020-02-01',1,2), (5,110,'2020-02-03',2,3), (6,900,'2020-02-05',3,3);
+q5 - select salespeople.snum,sname,city from salespeople, orders where orders.snum=salespeople.snum group by orders.snum,salespeople.snum having count(orders.snum)         >1;
+q6 - select s.snum, s.sname, s.city, o.onum, o.amt, o.odate, o.cnum from salespeople s, orders o where o.snum = s.snum;
+q7 - create index MyIndex on orders (onum,amt,odate,cnum);
+q8 - show index from orders;
+q9 - select o.onum,s.sname, c.cname from orders o, customers c, salespeople s where c.cnum = o.cnum;
