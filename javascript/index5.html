@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>EmployeeDetails</title>
+    <script type="text/javascript">
+        var listOfEmployees = [{
+            name: "Eram Fatima",
+            age: 23,
+            salary: 20000,
+            dateofbirth: 30 - 11 - 96
+        }, {
+            name: "Sadaf Fatima",
+            age: 23,
+            salary: 30000,
+            dob: 23 / 12 / 1993
+        }, {
+            name: "Sahil shah",
+            age: 25,
+            salary: 40000,
+            dob: 03 / 02 / 1992
+        }, {
+            name: "Amritpal",
+            age: 32,
+            salary: 70000,
+            dob: 30 / 11 / 1998
+        }, {
+            name: "Usama khan",
+            age: 38,
+            salary: 90000,
+            dob: 3 / 11 / 1996
+        }, {
+            name: "Yatin Kumar",
+            age: 40,
+            salary: 80000,
+            dob: 30 / 11 / 1996
+        }, {
+            name: "Abhishek Chauhan",
+            age: 25,
+            salary: 4000,
+            dob: 30 / 11 / 1996
+        }, {
+            name: "Sadeqa Naqab",
+            age: 28,
+            salary: 3400,
+            dob: 30 / 11 / 1996
+        }, {
+            name: "Nahid Parveen",
+            age: 44,
+            salary: 900,
+            dob: 30 / 11 / 1996
+        }, {
+            name: "Ileana Tehniyat",
+            age: 36,
+            salary: 7000,
+            dob: 30 / 11 / 1996
+        }];
+        //console.log("Emplyoees with Salary greater than 5000")
+        document.write("Emplyoees with Salary greater than 5000 <br>");
+        // var x;
+        /* for (x in listOfEmployees) {
+             if (listOfEmployees[x].salary > 5000) {
+                 //console.log(listOfEmployees[x]);
+                 document.write(JSON.stringify(listOfEmployees[x]));
+             }
+         }*/
+        const test = listOfEmployees.filter(item => item.salary > 5000)
+        console.log('test===>?', test);
+        // document.write(JSON.stringify());
+
+
+        const test1 = listOfEmployees.filter(item => item.salary < 1000 && item.age > 20)
+        console.log('test1=====>', test1);
+        const test3 = test1.map(ele => ele.salary * 5)
+
+
+
+        console.log(test3); // console.log("incrementing value 5 times" + b * 5);
+    </script>
+</head>
+
+</html>
