@@ -3,20 +3,46 @@
 <head>
     <title>Palindrome check</title>
     <script type="text/javascript">
-        function palindrome(str) {
-            var len = str.length;
-            var loopstart = Math.floor(len / 2);
-
-            for (var i = 0; i < loopstart; i++) {
-                if (str[i] !== str[len - 1 - i]) {
-                    return false;
+        const palindrome = () => {
+                const str = document.getElementById("t1").value;
+                var revStr = str.split('').reverse().join('');
+                if (str === revStr) {
+                    document.write("true");
+                } else {
+                    document.write("false");
                 }
             }
-            return true;
-        }
-        var str = prompt("enter the word: " + str);
-        document.write(palindrome(str));
+            // var len = str.length;
+            // var loopstart = Math.floor(len / 2);
+
+        //     for (var i = 0; i < loopstart; i++) {
+        //         if (str[i] !== str[len - 1 - i]) {
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // }
+        // function palindrome(str) {
+        //     console.log("hello");
+        //     var len = str.length;
+        //     var loopstart = Math.floor(len / 2);
+
+        //     for (var i = 0; i < loopstart; i++) {
+        //         if (str[i] !== str[len - 1 - i]) {
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // }
+        // var str = prompt("enter the word: " + str);
+        // document.write(palindrome(str));
     </script>
 </head>
+
+<body>
+    Enter text:
+    <input id="t1" type="text" value="">
+    <button onclick="palindrome()">click</button>
+</body>
 
 </html>

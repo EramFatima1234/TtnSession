@@ -3,12 +3,22 @@
 <head>
     <title>Area of Circle</title>
     <script type="text/javascript">
-        var area, r, pi;
-        pi = 3.14;
-        r = parseFloat(prompt("Enter the Radius: "));
-        area = pi * r * r;
-        document.write("Area of Circle is : " + area);
+        const AreaOfCircle = () => {
+            const rad = document.getElementById("t1").value;
+            var area, pi;
+            pi = 3.14;
+            // r = parseFloat(prompt("Enter the Radius: "));
+            area = pi * rad * rad;
+            document.write("Area of Circle is : " + area);
+
+        }
     </script>
 </head>
+
+<body>
+    Enter Radius:
+    <input id="t1" type="number" value="">
+    <button onclick="AreaOfCircle()">click</button>
+</body>
 
 </html>
